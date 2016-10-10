@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-12">&nbsp;</div>
+  <div class="col-md-6 col-md-offset-3">
+    <a href="#/documents" class="btn btn-gray btn-lg"><i class="fa fa-arrow-left pull-left"></i>&nbsp;Dokumente suchen</a>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <form name="form">
+      <h4>Dokument hochladen</h4>
+      <div class="row">
+        <div class="col-md-8">
+          <!--<input type="text" placeholder="Filename" name="filename" ng-model="filename" />-->
+          <input type="text" class="form-control" placeholder="Tags (mit Leerzeichen getrennt)" name="tags" ng-model="tags" />
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-lg btn-dark" ng-click="clickFileInput()">Datei auswählen</button>
+        </div>
+      </div>
+      <input id="file" type="file" class="form-control" ngf-select ng-model="file" style="display: none;" name="file" ngf-max-size="20MB" />
+      <button type="submit" class="btn btn-lg btn-red" ng-click="submit()">Hochladen</button>
+    </form>
+  </div>
+</div>

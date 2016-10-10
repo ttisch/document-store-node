@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">&nbsp;</div>
+  <div class="col-md-12">&nbsp;</div>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="#/documents/upload" class="btn btn-gray btn-lg"><i class="fa fa-upload pull-left"></i>&nbsp; Dokumente hochladen</a>
+      </div>
+      <div class="col-md-12">
+        <input type="text" ng-change="search()" ng-model="q" ng-model-options='{ debounce: 500 }' class="form-control pull-left" placeholder="Nach Dokumenten suchen ..." />
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">&nbsp;</div>
+  <div class="col-md-12">&nbsp;</div>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="row">
+      <div class="col-sm-4 padding text-center" ng-repeat="doc in docs">
+        <div class="t-style2" style="height: 350px;" ng-click="downloadFile(doc.FileId)">
+          <img ng-src="../img/{{getIconName(doc.Name)}}.png" width="50%" class="img-responsive" alt="..." />
+          <h4>{{doc.Name}}</h4>
+          <div class="t-social2 text-center"> <!-- Developer's Social Connect -->
+            <i class="fa fa-download tsocial" ng-model="id" ng-click="downloadFile(doc.FileId)"></i> <!-- Replace # with Your Linkedin URL -->
+          </div>
+          <div class="t-caption2">
+            <span ng-repeat="tag in doc.Tags track by $index">#{{tag}}&nbsp;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
